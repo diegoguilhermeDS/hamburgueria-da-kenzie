@@ -3,8 +3,8 @@
 3 - estilizar a logo e o input search
 4 - estilizar o header
 
-5 - componentizar products list
-6 - componentizar products
+5 - componentizar products list - OK
+6 - componentizar products - OK
 7 - estilizar products
 8 - estilizar produucts list
 
