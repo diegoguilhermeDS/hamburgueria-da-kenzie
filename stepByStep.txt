@@ -8,9 +8,9 @@
 7 - estilizar products
 8 - estilizar produucts list
 
-9 - componentizar Cart
-10 - componentizar cart products
-11 - componentizar cart total
+9 - componentizar Cart - OK
+10 - componentizar cart products - OK
+11 - componentizar cart total - OK
 12 - estilizar cart products
 13 - estilizar cart total
 14 - estilizar cart

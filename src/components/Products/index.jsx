@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from "../Button"
 
 const Products = () => {
   return (
@@ -8,7 +9,7 @@ const Products = () => {
             <h3>Hamburguer</h3>
             <small>Sanduíches</small>
             <span>R$ 14.00</span>
-            <button>Adicionar</button>
+            <Button children={"Adicionar"}/>
         </div>
     </li>
   )
