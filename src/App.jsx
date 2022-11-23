@@ -1,4 +1,5 @@
 import './App.css';
+import Cart from './components/Cart';
 import Header from './components/Header';
 import ProductsList from './components/ProductsList';
 
@@ -10,9 +11,7 @@ function App() {
         <section>
           <ProductsList/>
         </section>
-        <aside>
-          
-        </aside>
+        <Cart/>
       </main>
     </div>
   );
