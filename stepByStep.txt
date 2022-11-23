@@ -1,0 +1,16 @@
+1 - componentizar o header
+2 - componentizar a logo e o input search
+3 - estilizar a logo e o input search
+4 - estilizar o header
+
+5 - componentizar products list
+6 - componentizar products
+7 - estilizar products
+8 - estilizar produucts list
+
+9 - componentizar Cart
+10 - componentizar cart products
+11 - componentizar cart total
+12 - estilizar cart products
+13 - estilizar cart total
+14 - estilizar cart
