@@ -1,5 +1,5 @@
-1 - componentizar o header
-2 - componentizar a logo e o input search
+1 - componentizar o header - OK
+2 - componentizar a logo e o input search - OK
 3 - estilizar a logo e o input search
 4 - estilizar o header
 
