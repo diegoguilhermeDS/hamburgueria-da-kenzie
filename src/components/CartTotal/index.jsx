@@ -1,12 +1,14 @@
 import React from 'react'
 import Button from '../Button'
 
-const CartTotal = () => {
+const CartTotal = ({currentSale}) => {
+  const valueTotal = currentSale.reduce((oldValue, currencyValue) => oldValue + currencyValue.price, 0)
+
   return (
     <section>
         <div>
             <span>Total</span>
-            <span>R$ 40,00</span>
+            <span>R$ {valueTotal.toFixed(2).replace(".",",")}</span>
         </div>
         <Button children={"Remover todos"}/>
     </section>

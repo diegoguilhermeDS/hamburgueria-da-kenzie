@@ -29,9 +29,9 @@ function App() {
       <Header />
       <main>
         <section>
-          <ProductsList products={products}/>
+          <ProductsList products={products} currentSale={currentSale} setCurrentSale={setCurrentSale}/>
         </section>
-        <Cart />
+        <Cart currentSale={currentSale}/>
       </main>
     </div>
   );

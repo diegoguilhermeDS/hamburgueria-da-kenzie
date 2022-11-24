@@ -18,7 +18,8 @@
 * Funcionalidades *
 
 1 - requisições - OK 
-2 - add products cart - 
+2 - add products cart - OK
 3 - remove products cart
 4 - remove all products cart
 5 - search
+6 - adicionar apenas um elemnto caso contrarios x2
