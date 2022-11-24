@@ -4,18 +4,13 @@ import Button from "../Button"
 const Products = ({product, currentSale, setCurrentSale, products}) => {
   const {name, category, price, id, img} = product
 
-  const handleTurn = () => {
-    return [...currentSale]
-  }
-
-
   const handleAddToCart = (event) => {
     const findProduct = products.find((prod) => prod.id === +event.target.id)
     setCurrentSale([...currentSale, findProduct])
   }
 
   return (
-    <li key={id} id={id}>
+    <li id={id}>
         <img src={img} alt={`imagem do ${name}`} />
         <div>
             <h3>{name}</h3>

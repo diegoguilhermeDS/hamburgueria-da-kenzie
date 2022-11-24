@@ -15,7 +15,7 @@ function App() {
     async function getProducts() {
       try {
         const response = await api.get("");
-        setProducts(response.data)
+        setProducts(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -29,9 +29,13 @@ function App() {
       <Header />
       <main>
         <section>
-          <ProductsList products={products} currentSale={currentSale} setCurrentSale={setCurrentSale}/>
+          <ProductsList
+            products={products}
+            currentSale={currentSale}
+            setCurrentSale={setCurrentSale}
+          />
         </section>
-        <Cart currentSale={currentSale}/>
+        <Cart currentSale={currentSale} setCurrentSale={setCurrentSale} />
       </main>
     </div>
   );
