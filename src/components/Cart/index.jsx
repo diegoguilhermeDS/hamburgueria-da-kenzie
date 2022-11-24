@@ -1,8 +1,9 @@
 import React from 'react'
+import CartEmpty from '../CartEmpty'
 import CartProducts from '../CartProducts'
 import CartTotal from '../CartTotal'
 
-const Cart = () => {
+const Cart = ({currentSale}) => {
   return (
     <aside>
         <section>
@@ -10,12 +11,10 @@ const Cart = () => {
         </section>
         <section>
             <ul>
-                <CartProducts/>
-                <CartProducts/>
-                <CartProducts/>
+                {currentSale.length > 0 ? currentSale.map((product) => <CartProducts product={product}/>) : <CartEmpty/>}
+                {currentSale.length > 0 && <CartTotal currentSale={currentSale}/>}  
             </ul>
         </section>
-        <CartTotal/>
     </aside>
   )
 }

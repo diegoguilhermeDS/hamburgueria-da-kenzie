@@ -1,16 +1,18 @@
 import React from 'react'
 
-const CartProducts = () => {
+const CartProducts = ({product}) => {
+  const {name, category, id, img} = product
+
   return (
-    <li>
+    <li id={id} key={id}>
         <div>
-            <img src="" alt="imagem do produto" />
+            <img src={img} alt={`imagem do ${name}`} />
             <div>
-                <h4>Hamburguer</h4>
-                <span>Sanduíches</span>
+                <h4>{name}</h4>
+                <span>{category}</span>
             </div>
         </div>
-        <span>Remover</span>
+        <button>Remover</button>
     </li>
   )
 }
