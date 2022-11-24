@@ -1,12 +1,20 @@
-import React from 'react'
-import Products from '../Products'
+import React from "react";
+import Products from "../Products";
 
-const ProductsList = ({products, currentSale, setCurrentSale}) => {
+const ProductsList = ({ products, currentSale, setCurrentSale }) => {
   return (
     <ul>
-        {products.map((product) => <Products product={product} products={products} currentSale={currentSale} setCurrentSale={setCurrentSale}/>)}
+      {products.map((product) => (
+        <Products
+          product={product}
+          products={products}
+          currentSale={currentSale}
+          setCurrentSale={setCurrentSale}
+          key={product.name}
+        />
+      ))}
     </ul>
-  )
-}
+  );
+};
 
-export default ProductsList
+export default ProductsList;

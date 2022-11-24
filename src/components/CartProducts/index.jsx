@@ -1,10 +1,18 @@
 import React from 'react'
+import Button from '../Button'
 
-const CartProducts = ({product}) => {
+const CartProducts = ({product, currentSale, setCurrentSale, index}) => {
   const {name, category, id, img} = product
 
+  const handleRemoveToCart = (event) => {
+    const filterProductRemove = currentSale.filter((prod, index) => {
+      return index !== +event.target.id
+    })
+    setCurrentSale(filterProductRemove)
+  }
+
   return (
-    <li id={id} key={id}>
+    <li id={index}>
         <div>
             <img src={img} alt={`imagem do ${name}`} />
             <div>
@@ -12,7 +20,7 @@ const CartProducts = ({product}) => {
                 <span>{category}</span>
             </div>
         </div>
-        <button>Remover</button>
+        <Button id={index} handle={handleRemoveToCart}>Remover</Button>
     </li>
   )
 }
