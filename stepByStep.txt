@@ -14,3 +14,11 @@
 12 - estilizar cart products
 13 - estilizar cart total
 14 - estilizar cart
+
+* Funcionalidades *
+
+1 - requisições - OK 
+2 - add products cart - 
+3 - remove products cart
+4 - remove all products cart
+5 - search
