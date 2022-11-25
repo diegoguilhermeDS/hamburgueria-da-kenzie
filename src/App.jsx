@@ -9,13 +9,13 @@ function App() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState([]);
-  const [cartTotal, setCartTotal] = useState(0);
 
   useEffect(() => {
     async function getProducts() {
       try {
         const response = await api.get("");
         setProducts(response.data);
+        setFilteredProducts(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -26,11 +26,15 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header
+        filteredProducts={filteredProducts}
+        setFilteredProducts={setFilteredProducts}
+        products={products}
+      />
       <main>
         <section>
           <ProductsList
-            products={products}
+            products={filteredProducts}
             currentSale={currentSale}
             setCurrentSale={setCurrentSale}
           />
