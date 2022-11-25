@@ -7,8 +7,9 @@ const Products = ({ product, currentSale, setCurrentSale, products }) => {
   const handleAddToCart = (event) => {
     const findProduct = products.find((prod) => prod.id === +event.target.id);
     if (currentSale.includes(findProduct)) {
+      const listFilterCurrencyProduct = currentSale.filter((sale) => sale !== findProduct)
       findProduct.amount += 1;
-      setCurrentSale(currentSale)
+      setCurrentSale([...listFilterCurrencyProduct, findProduct])
     } else {
       setCurrentSale([...currentSale, findProduct]);
     }

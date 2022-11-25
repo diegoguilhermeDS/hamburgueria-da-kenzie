@@ -11,14 +11,14 @@ const CartProducts = ({ product, currentSale, setCurrentSale }) => {
 
     if (findProduct.amount > 1) {
       findProduct.amount -= 1;
+      const listFilterCurrencyProduct = currentSale.filter((sale) => sale !== findProduct)
+      setCurrentSale([...listFilterCurrencyProduct, findProduct])
     } else {
       const filterProductRemove = currentSale.filter((prod) => {
         return prod.id !== +event.target.id;
       });
       setCurrentSale(filterProductRemove);
     }
-
-    console.log(findProduct.amount);
   };
 
   return (
@@ -34,8 +34,7 @@ const CartProducts = ({ product, currentSale, setCurrentSale }) => {
         <Button id={id} handle={handleRemoveToCart}>
           Remover
         </Button>
-        {/* {amount > 1 ? <span>{amount}x</span> : <></>} */}
-        <span>{amount}x</span>
+        {amount > 1 ? <span>{amount}x</span> : <></>}
       </div>
     </li>
   );
