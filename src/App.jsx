@@ -15,6 +15,7 @@ function App() {
       try {
         const response = await api.get("");
         setProducts(response.data);
+        response.data.map((dat) => dat.amount = 1)
         setFilteredProducts(response.data);
       } catch (error) {
         console.log(error);

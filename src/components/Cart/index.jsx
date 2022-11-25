@@ -17,7 +17,6 @@ const Cart = ({ currentSale, setCurrentSale }) => {
                 product={product}
                 currentSale={currentSale}
                 setCurrentSale={setCurrentSale}
-                index={index}
                 key={index}
               />
             ))
