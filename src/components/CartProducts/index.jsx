@@ -1,28 +1,43 @@
-import React from 'react'
-import Button from '../Button'
+import React from "react";
+import Button from "../Button";
 
-const CartProducts = ({product, currentSale, setCurrentSale, index}) => {
-  const {name, category, id, img} = product
+const CartProducts = ({ product, currentSale, setCurrentSale }) => {
+  const { name, category, id, img, amount } = product;
 
   const handleRemoveToCart = (event) => {
-    const filterProductRemove = currentSale.filter((prod, index) => {
-      return index !== +event.target.id
-    })
-    setCurrentSale(filterProductRemove)
-  }
+    const findProduct = currentSale.find(
+      (prod) => prod.id === +event.target.id
+    );
+
+    if (findProduct.amount > 1) {
+      findProduct.amount -= 1;
+      const listFilterCurrencyProduct = currentSale.filter((sale) => sale !== findProduct)
+      setCurrentSale([...listFilterCurrencyProduct, findProduct])
+    } else {
+      const filterProductRemove = currentSale.filter((prod) => {
+        return prod.id !== +event.target.id;
+      });
+      setCurrentSale(filterProductRemove);
+    }
+  };
 
   return (
-    <li id={index}>
+    <li id={id}>
+      <div>
+        <img src={img} alt={`imagem do ${name}`} />
         <div>
-            <img src={img} alt={`imagem do ${name}`} />
-            <div>
-                <h4>{name}</h4>
-                <span>{category}</span>
-            </div>
+          <h4>{name}</h4>
+          <span>{category}</span>
         </div>
-        <Button id={index} handle={handleRemoveToCart}>Remover</Button>
+      </div>
+      <div>
+        <Button id={id} handle={handleRemoveToCart}>
+          Remover
+        </Button>
+        {amount > 1 ? <span>{amount}x</span> : <></>}
+      </div>
     </li>
-  )
-}
+  );
+};
 
-export default CartProducts
+export default CartProducts;
