@@ -4,14 +4,14 @@ export const StyledInputContainer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px;
+  gap: 0.625rem;
+  padding: 0.625rem;
 
   background-color: aqua;
-  height: 60px;
+  height: 3.75rem;
   border-radius: var(--radius-1);
   background-color: #fff;
-  border: 2px solid var(--color-grey-300);
+  border: 0.125rem solid var(--color-grey-300);
   transition: 0.3s ease;
 
   input {
@@ -21,14 +21,14 @@ export const StyledInputContainer = styled.div`
     width: 100%;
     height: 60%;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 1rem;
+    line-height: 1.1875rem;
 
     &::placeholder {
       color: var(--color-grey-300);
       font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
+      font-size: 1rem;
+      line-height: 1.1875rem;
     }
   }
 
@@ -37,6 +37,6 @@ export const StyledInputContainer = styled.div`
   }
 
   @media (min-width: 700px) {
-    width: 365px;
+    width: 22.8125rem;
   }
 `;

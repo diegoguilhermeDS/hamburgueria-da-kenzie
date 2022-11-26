@@ -1,5 +1,7 @@
 import React from "react";
+import { StyledText } from "../../styles/typography";
 import Button from "../Button";
+import { StyledTotal } from "./style";
 
 const CartTotal = ({ currentSale, setCurrentSale }) => {
   const valueCart = currentSale.map((sale) => {
@@ -15,13 +17,26 @@ const CartTotal = ({ currentSale, setCurrentSale }) => {
   };
 
   return (
-    <section>
+    <StyledTotal>
       <div>
-        <span>Total</span>
-        <span>R$ {valueTotal.toFixed(2).replace(".", ",")}</span>
+        <StyledText tag="span" fontWeight={600} fontSize="5">
+          Total
+        </StyledText>
+        <StyledText
+          tag="span"
+          fontWeight={600}
+          fontSize="5"
+          colorText="grey-50"
+        >
+          R$ {valueTotal.toFixed(2).replace(".", ",")}
+        </StyledText>
       </div>
-      <Button children={"Remover todos"} handle={handleRemoveAllToCart} />
-    </section>
+      <Button
+        children={"Remover todos"}
+        handle={handleRemoveAllToCart}
+        typeColor="default"
+      />
+    </StyledTotal>
   );
 };
 
