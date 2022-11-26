@@ -18,3 +18,14 @@ export const ContainerHeader = styled.div`
         max-width: 1200px;
     }
 `   
+
+export const Container = styled.main `
+    padding: 0 1rem;
+    
+    @media (min-width: 1024px) {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+`

@@ -5,7 +5,7 @@ const InputSearch = ({ setFilteredProducts, products }) => {
   const handleSearchInput = (event) => {
     const search = event.target.value; 
     const filterProducts = products.filter((product) =>
-      product.name.toLowerCase().includes(search)
+      product.name.toLowerCase().includes(search.toLowerCase())
     );
     setFilteredProducts(filterProducts);
   };
