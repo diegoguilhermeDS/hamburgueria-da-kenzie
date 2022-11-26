@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import ProductsList from "./components/ProductsList";
 import { useEffect, useState } from "react";
 import { api } from "./services/api";
+import { GlobalStyle } from "./styles/global";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <div className="App">
+      <GlobalStyle/>
       <Header
         filteredProducts={filteredProducts}
         setFilteredProducts={setFilteredProducts}

@@ -1,25 +1,17 @@
-1 - componentizar o header - OK
-2 - componentizar a logo e o input search - OK
-3 - estilizar a logo e o input search
-4 - estilizar o header
+1 - style header moblie first - OK
+2 - style header response - OK
+3 - style inputSearch - Ok
+4 - style Button - OK
 
-5 - componentizar products list - OK
-6 - componentizar products - OK
-7 - estilizar products
-8 - estilizar produucts list
+5 - style products list moblie first
+6 - style products list response
+7 - style product 
+8 - style texts
 
-9 - componentizar Cart - OK
-10 - componentizar cart products - OK
-11 - componentizar cart total - OK
-12 - estilizar cart products
-13 - estilizar cart total
-14 - estilizar cart
+9 - style cart moblie first
+10 - style cart response
+11 - style product cart
+12 - style cart total
 
-* Funcionalidades *
-
-1 - requisições - OK 
-2 - add products cart - OK
-3 - remove products cart - OK
-4 - remove all products cart - OK
-5 - search - OK
-6 - adicionar apenas um elemnto caso contrarios x2
+13 - pré-load
+14 - readme
