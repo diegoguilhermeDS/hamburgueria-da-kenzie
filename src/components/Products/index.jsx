@@ -1,5 +1,7 @@
 import React from "react";
+import { StyledText } from "../../styles/typography";
 import Button from "../Button";
+import { StyledProduct } from "./style";
 
 const Products = ({ product, currentSale, setCurrentSale, products }) => {
   const { name, category, price, id, img } = product;
@@ -16,15 +18,15 @@ const Products = ({ product, currentSale, setCurrentSale, products }) => {
   };
 
   return (
-    <li id={id}>
+    <StyledProduct id={id}>
       <img src={img} alt={`imagem do ${name}`} />
       <div>
-        <h3>{name}</h3>
-        <small>{category}</small>
-        <span>{`R$ ${price.toFixed(2).replace(".", ",")}`}</span>
+        <StyledText tag="h2" fontWeight={700} fontSize="3">{name}</StyledText>
+        <StyledText tag="span" colorText={"grey-50"} fontSize="6">{category}</StyledText>
+        <StyledText tag="span" fontWeight={600} colorText={"brand"} fontSize="5">{`R$ ${price.toFixed(2).replace(".", ",")}`}</StyledText>
         <Button id={id} children={"Adicionar"} handle={handleAddToCart} />
       </div>
-    </li>
+    </StyledProduct>
   );
 };
 

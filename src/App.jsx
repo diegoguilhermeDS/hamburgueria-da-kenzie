@@ -5,6 +5,7 @@ import ProductsList from "./components/ProductsList";
 import { useEffect, useState } from "react";
 import { api } from "./services/api";
 import { GlobalStyle } from "./styles/global";
+import { Container } from "./styles/Container";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -34,7 +35,7 @@ function App() {
         setFilteredProducts={setFilteredProducts}
         products={products}
       />
-      <main>
+      <Container>
         <section>
           <ProductsList
             products={filteredProducts}
@@ -43,7 +44,7 @@ function App() {
           />
         </section>
         <Cart currentSale={currentSale} setCurrentSale={setCurrentSale} />
-      </main>
+      </Container>
     </div>
   );
 }

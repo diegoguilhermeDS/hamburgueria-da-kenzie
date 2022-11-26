@@ -3,10 +3,10 @@
 3 - style inputSearch - Ok
 4 - style Button - OK
 
-5 - style products list moblie first
-6 - style products list response
-7 - style product 
-8 - style texts
+5 - style products list moblie first - OK
+6 - style products list response - OK
+7 - style product - OK
+8 - style texts - OK
 
 9 - style cart moblie first
 10 - style cart response

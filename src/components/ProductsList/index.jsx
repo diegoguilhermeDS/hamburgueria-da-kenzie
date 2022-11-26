@@ -1,9 +1,10 @@
 import React from "react";
 import Products from "../Products";
+import { StyledProductsList } from "./style";
 
 const ProductsList = ({ products, currentSale, setCurrentSale }) => {
   return (
-    <ul>
+    <StyledProductsList>
       {products.map((product) => (
         <Products
           product={product}
@@ -13,7 +14,7 @@ const ProductsList = ({ products, currentSale, setCurrentSale }) => {
           key={product.name}
         />
       ))}
-    </ul>
+    </StyledProductsList>
   );
 };
 
