@@ -8,10 +8,10 @@
 7 - style product - OK
 8 - style texts - OK
 
-9 - style cart moblie first
-10 - style cart response
-11 - style product cart
-12 - style cart total
+9 - style cart moblie first - OK
+10 - style cart response - OK
+11 - style product cart - OK
+12 - style cart total - OK
 
 13 - pré-load
 14 - readme

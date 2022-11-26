@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-/*  */
 
 export const GlobalStyle = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
@@ -48,5 +47,28 @@ export const GlobalStyle = createGlobalStyle`
 
         --radius-1: .5rem;
         --radius-2: .3125rem;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0.25rem;
+
+        @media (min-width: 1024px) {
+            width: 0.375rem;
+        }
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--color-grey-400);
+        margin: .5rem;
+        border-radius: 1.6rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-brand-200);
+        border-radius: 1.6rem;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-brand-100);
     }
 `;

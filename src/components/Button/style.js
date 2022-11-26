@@ -3,18 +3,18 @@ import styled, { css } from "styled-components";
 export const StyledButton = styled.button`
   border-radius: var(--radius-1);
   font-weight: 500;
-  font-size: 14px;
+  font-size: .875rem;
   transition: 0.3s ease;
 
   ${({ type }) => {
     if (type === "medium") {
       return css`
-        padding: 10px 20px;
+        padding: .625rem 1.25rem;
       `;
     } else {
       return css`
-        height: 40px;
-        padding: 0 20px;
+        height: 2.5rem;
+        padding: 0 1.25rem;
       `;
     }
   }}

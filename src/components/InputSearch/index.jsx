@@ -3,7 +3,7 @@ import { StyledInputContainer } from "./style";
 
 const InputSearch = ({ setFilteredProducts, products }) => {
   const handleSearchInput = (event) => {
-    const search = event.target.value; 
+    const search = event.target.value;
     const filterProducts = products.filter((product) =>
       product.name.toLowerCase().includes(search.toLowerCase())
     );
@@ -11,7 +11,7 @@ const InputSearch = ({ setFilteredProducts, products }) => {
   };
 
   return (
-    <StyledInputContainer className="inputSearch" >
+    <StyledInputContainer className="inputSearch">
       <input
         type="text"
         onChange={handleSearchInput}

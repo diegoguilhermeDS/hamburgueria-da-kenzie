@@ -1,38 +1,44 @@
 import React from "react";
+import { StyledText } from "../../styles/typography";
 import CartEmpty from "../CartEmpty";
 import CartProducts from "../CartProducts";
 import CartTotal from "../CartTotal";
+import { StyledAside } from "./style";
 
 const Cart = ({ currentSale, setCurrentSale }) => {
   return (
-    <aside>
+    <StyledAside>
       <section>
-        <h3>Carrinho de compras</h3>
+        <StyledText tag="h3" fontWeight={700} fontSize="3" colorText="white">
+          Carrinho de compras
+        </StyledText>
       </section>
-      <section>
+      <section className="containerListCart">
         <ul>
           {currentSale.length > 0 ? (
-            currentSale.map((product, index) => (
-              <CartProducts
-                product={product}
-                currentSale={currentSale}
-                setCurrentSale={setCurrentSale}
-                key={index}
-              />
-            ))
+            currentSale
+              .sort((a, b) => (a.name > b.name ? 1 : -1))
+              .map((product, index) => (
+                <CartProducts
+                  product={product}
+                  currentSale={currentSale}
+                  setCurrentSale={setCurrentSale}
+                  key={index}
+                />
+              ))
           ) : (
             <CartEmpty />
           )}
-
-          {currentSale.length > 0 && (
-            <CartTotal
-              currentSale={currentSale}
-              setCurrentSale={setCurrentSale}
-            />
-          )}
         </ul>
+        {currentSale.length > 0 && <div className="line"></div>}
+        {currentSale.length > 0 && (
+          <CartTotal
+            currentSale={currentSale}
+            setCurrentSale={setCurrentSale}
+          />
+        )}
       </section>
-    </aside>
+    </StyledAside>
   );
 };
 

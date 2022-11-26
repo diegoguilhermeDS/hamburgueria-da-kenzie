@@ -1,5 +1,6 @@
 import React from "react";
-import Button from "../Button";
+import { StyledText } from "../../styles/typography";
+import { StyledCartProduct } from "./style";
 
 const CartProducts = ({ product, currentSale, setCurrentSale }) => {
   const { name, category, id, img, amount } = product;
@@ -11,8 +12,10 @@ const CartProducts = ({ product, currentSale, setCurrentSale }) => {
 
     if (findProduct.amount > 1) {
       findProduct.amount -= 1;
-      const listFilterCurrencyProduct = currentSale.filter((sale) => sale !== findProduct)
-      setCurrentSale([...listFilterCurrencyProduct, findProduct])
+      const listFilterCurrencyProduct = currentSale.filter(
+        (sale) => sale !== findProduct
+      );
+      setCurrentSale([...listFilterCurrencyProduct, findProduct]);
     } else {
       const filterProductRemove = currentSale.filter((prod) => {
         return prod.id !== +event.target.id;
@@ -22,21 +25,33 @@ const CartProducts = ({ product, currentSale, setCurrentSale }) => {
   };
 
   return (
-    <li id={id}>
-      <div>
-        <img src={img} alt={`imagem do ${name}`} />
-        <div>
-          <h4>{name}</h4>
-          <span>{category}</span>
+    <StyledCartProduct id={id}>
+      <div className="containerProduct">
+        <div className="containerImageProduct">
+          <img src={img} alt={`imagem do ${name}`} />
+        </div>
+        <div className="infoProduct">
+          <StyledText tag="h3" fontWeight={700} fontSize="3">
+            {name}
+          </StyledText>
+          <StyledText tag="span" fontSize="6" colorText="grey-50">
+            {category}
+          </StyledText>
         </div>
       </div>
-      <div>
-        <Button id={id} handle={handleRemoveToCart}>
+      <div className="containerButtoRemove">
+        <button id={id} onClick={handleRemoveToCart}>
           Remover
-        </Button>
-        {amount > 1 ? <span>{amount}x</span> : <></>}
+        </button>
+        {amount > 1 ? (
+          <StyledText tag="span" fontSize="6" colorText="grey-50">
+            {amount}x
+          </StyledText>
+        ) : (
+          <></>
+        )}
       </div>
-    </li>
+    </StyledCartProduct>
   );
 };
 
