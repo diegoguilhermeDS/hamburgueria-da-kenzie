@@ -4,6 +4,18 @@ export const StyledCartProduct = styled.li`
   display: flex;
   max-height: 5rem;
   border-radius: var(--radius-2);
+  animation: addToCart 1.3s ease;
+
+  @keyframes addToCart {
+    from {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 
   .containerProduct {
     display: flex;

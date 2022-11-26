@@ -9,6 +9,7 @@ export const StyledProduct = styled.li`
   background-color: var(--color-grey-400);
   border: 2px solid var(--color-grey-300);
   border-radius: var(--radius-2);
+  animation: showProduct 1s ease ;
 
   &:hover {
     border: 2px solid var(--color-brand-100);
@@ -21,6 +22,16 @@ export const StyledProduct = styled.li`
 
   @media (min-width: 1200px) {
     min-width: 14.6875rem;
+  }
+
+  @keyframes showProduct {
+    from {
+      opacity: 0;
+      transform: scale(0.5, 0.5);
+    } 
+    to {
+      opacity: 1;
+    }
   }
 
   img {
