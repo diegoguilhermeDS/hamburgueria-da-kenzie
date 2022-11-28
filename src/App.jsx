@@ -11,7 +11,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState([]);
-  const [preloadState, setPreloadState] = useState(false);
+  const [preloadState, setPreloadState] = useState(true);
 
   useEffect(() => {
     async function getProducts() {
@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      {/* {preloadState && <PreLoad setPreloadState={setPreloadState} />} */}
+      {preloadState && <PreLoad setPreloadState={setPreloadState} />}
       {!preloadState && (
         <div className="content">
           <Header
