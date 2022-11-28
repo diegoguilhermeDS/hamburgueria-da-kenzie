@@ -4,9 +4,9 @@ export const StyledCartProduct = styled.li`
   display: flex;
   max-height: 5rem;
   border-radius: var(--radius-2);
-  animation: addToCart 1.3s ease;
+  /* animation: addToCart 1.3s ease; */
 
-  @keyframes addToCart {
+  /* @keyframes addToCart {
     from {
       transform: translateX(-100px);
       opacity: 0;
@@ -15,7 +15,7 @@ export const StyledCartProduct = styled.li`
       transform: translateX(0);
       opacity: 1;
     }
-  }
+  } */
 
   .containerProduct {
     display: flex;
