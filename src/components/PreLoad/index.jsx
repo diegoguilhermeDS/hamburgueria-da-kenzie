@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { StyledPreLoad } from './styled'
 import img from "../../assets/img/BurguerKenzie.png"
 import burguer from "../../assets/img/hambuguer.png"
 
 const PreLoad = ({setPreloadState}) => {
 
-  setTimeout(() => {
-    setPreloadState(false)
-  }, 2000)
+  useEffect(() => {  
+    setTimeout(() => {
+      setPreloadState(false)
+    }, 2000)
+  }, [])
 
   return (
     <StyledPreLoad>

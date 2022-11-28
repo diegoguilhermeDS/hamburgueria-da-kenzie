@@ -1,4 +1,13 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+
+const bgAnimation = keyframes`
+  from {
+      background-position: 0 50%;
+    }
+    to {
+      background-position: 100% 50%;
+    }
+`
 
 export const StyledPreLoad = styled.div`
   display: flex;
@@ -18,22 +27,14 @@ export const StyledPreLoad = styled.div`
     #1f1300
   );
   background-size: 300% 300%;
-  animation: bgAnimation 5s ease infinite alternate;
+  animation: ${bgAnimation} 5s ease infinite alternate;
 
-  @keyframes bgAnimation {
-    from {
-      background-position: 0 50%;
-    }
-    to {
-      background-position: 100% 50%;
-    }
-  }
 
   .burguerImg {
     width: 200px;
-    animation: jello-horizontal 0.9s both;
+    /* animation: jello-horizontal 0.9s both; */
 
-    @keyframes jello-horizontal {
+   /*  @keyframes jello-horizontal {
       0% {
         -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
@@ -62,14 +63,14 @@ export const StyledPreLoad = styled.div`
         -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
       }
-    }
-  }
+    }*/
+  } 
 
   .logoImg {
     width: 200px;
-    animation: roll-in-blurred-left 0.65s cubic-bezier(0.23, 1, 0.32, 1) 1s both;
-
-    @keyframes roll-in-blurred-left {
+    /* animation: roll-in-blurred-left 0.65s cubic-bezier(0.23, 1, 0.32, 1) 1s both;
+ */
+    /* @keyframes roll-in-blurred-left {
       0% {
         -webkit-transform: translateX(-1000px) rotate(-720deg);
         transform: translateX(-1000px) rotate(-720deg);
@@ -84,6 +85,6 @@ export const StyledPreLoad = styled.div`
         filter: blur(0);
         opacity: 1;
       }
-    }
-  }
+    }*/
+  } 
 `;
