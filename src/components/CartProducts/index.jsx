@@ -1,28 +1,12 @@
 import React from "react";
+import { useContext } from "react";
+import { CartContext } from "../../providers/Cart/cartContext";
 import { StyledText } from "../../styles/typography";
 import { StyledCartProduct } from "./style";
 
-const CartProducts = ({ product, currentSale, setCurrentSale }) => {
+const CartProducts = ({ product }) => {
   const { name, category, id, img, amount } = product;
-
-  const handleRemoveToCart = (event) => {
-    const findProduct = currentSale.find(
-      (prod) => prod.id === +event.target.id
-    );
-
-    if (findProduct.amount > 1) {
-      findProduct.amount -= 1;
-      const listFilterCurrencyProduct = currentSale.filter(
-        (sale) => sale !== findProduct
-      );
-      setCurrentSale([...listFilterCurrencyProduct, findProduct]);
-    } else {
-      const filterProductRemove = currentSale.filter((prod) => {
-        return prod.id !== +event.target.id;
-      });
-      setCurrentSale(filterProductRemove);
-    }
-  };
+  const {handleRemoveToCart} = useContext(CartContext)
 
   return (
     <StyledCartProduct id={id}>

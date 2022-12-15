@@ -1,9 +1,13 @@
 import React from "react";
+import { useContext } from "react";
+import { CartContext } from "../../providers/Cart/cartContext";
 import { StyledText } from "../../styles/typography";
 import Button from "../Button";
 import { StyledTotal } from "./style";
 
-const CartTotal = ({ currentSale, setCurrentSale }) => {
+const CartTotal = () => {
+  const { currentSale, handleRemoveAllToCart } = useContext(CartContext);
+
   const valueCart = currentSale.map((sale) => {
     const newSale = sale.price * sale.amount;
     return newSale;
@@ -12,9 +16,6 @@ const CartTotal = ({ currentSale, setCurrentSale }) => {
     (oldValue, currencyValue) => oldValue + currencyValue,
     0
   );
-  const handleRemoveAllToCart = () => {
-    setCurrentSale([]);
-  };
 
   return (
     <StyledTotal>

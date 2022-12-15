@@ -4,15 +4,12 @@ import InputSearch from "../InputSearch";
 import Logo from "../Logo";
 import { StyledHeader } from "./style";
 
-const Header = ({ setFilteredProducts, products }) => {
+const Header = () => {
   return (
     <StyledHeader className="header">
       <ContainerHeader>
         <Logo />
-        <InputSearch
-          setFilteredProducts={setFilteredProducts}
-          products={products}
-        />
+        <InputSearch />
       </ContainerHeader>
     </StyledHeader>
   );

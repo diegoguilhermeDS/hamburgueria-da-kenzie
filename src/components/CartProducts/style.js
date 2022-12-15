@@ -1,13 +1,7 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-export const StyledCartProduct = styled.li`
-  display: flex;
-  max-height: 5rem;
-  border-radius: var(--radius-2);
-  animation: addToCart 1.3s ease;
-
-  @keyframes addToCart {
-    from {
+const addToCart = keyframes`
+  from {
       transform: translateX(-100px);
       opacity: 0;
     }
@@ -15,7 +9,13 @@ export const StyledCartProduct = styled.li`
       transform: translateX(0);
       opacity: 1;
     }
-  }
+`;
+
+export const StyledCartProduct = styled.li`
+  display: flex;
+  max-height: 5rem;
+  border-radius: var(--radius-2);
+  animation: ${addToCart} 1.3s ease;
 
   .containerProduct {
     display: flex;
