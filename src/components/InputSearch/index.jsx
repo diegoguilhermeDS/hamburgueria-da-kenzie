@@ -1,20 +1,16 @@
+import { useContext } from "react";
+import { UserContext } from "../../providers/userContext";
 import Button from "../Button";
 import { StyledInputContainer } from "./style";
 
-const InputSearch = ({ setFilteredProducts, products }) => {
-  const handleSearchInput = (event) => {
-    const search = event.target.value;
-    const filterProducts = products.filter((product) =>
-      product.name.toLowerCase().includes(search.toLowerCase())
-    );
-    setFilteredProducts(filterProducts);
-  };
+const InputSearch = () => {
+  const { handleSearchProduct } = useContext(UserContext);
 
   return (
     <StyledInputContainer className="inputSearch">
       <input
         type="text"
-        onChange={handleSearchInput}
+        onChange={handleSearchProduct}
         placeholder="Digitar Pesquisa"
       />
       <Button children={"Pesquisar"} type={"medium"} />

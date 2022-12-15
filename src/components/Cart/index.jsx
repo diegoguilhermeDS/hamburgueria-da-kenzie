@@ -1,11 +1,15 @@
 import React from "react";
+import { useContext } from "react";
+import { CartContext } from "../../providers/Cart/cartContext";
 import { StyledText } from "../../styles/typography";
 import CartEmpty from "../CartEmpty";
 import CartProducts from "../CartProducts";
 import CartTotal from "../CartTotal";
 import { StyledAside } from "./style";
 
-const Cart = ({ currentSale, setCurrentSale }) => {
+const Cart = () => {
+  const { currentSale } = useContext(CartContext);
+
   return (
     <StyledAside>
       <section>
@@ -19,24 +23,14 @@ const Cart = ({ currentSale, setCurrentSale }) => {
             currentSale
               .sort((a, b) => (a.name > b.name ? 1 : -1))
               .map((product, index) => (
-                <CartProducts
-                  product={product}
-                  currentSale={currentSale}
-                  setCurrentSale={setCurrentSale}
-                  key={index}
-                />
+                <CartProducts product={product} key={index} />
               ))
           ) : (
             <CartEmpty />
           )}
         </ul>
         {currentSale.length > 0 && <div className="line"></div>}
-        {currentSale.length > 0 && (
-          <CartTotal
-            currentSale={currentSale}
-            setCurrentSale={setCurrentSale}
-          />
-        )}
+        {currentSale.length > 0 && <CartTotal />}
       </section>
     </StyledAside>
   );

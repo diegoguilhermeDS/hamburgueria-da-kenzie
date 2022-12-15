@@ -1,23 +1,13 @@
 import React from "react";
+import { useContext } from "react";
+import { CartContext } from "../../providers/Cart/cartContext";
 import { StyledText } from "../../styles/typography";
 import Button from "../Button";
 import { StyledProduct } from "./style";
 
-const Products = ({ product, currentSale, setCurrentSale, products }) => {
+const Products = ({ product }) => {
   const { name, category, price, id, img } = product;
-
-  const handleAddToCart = (event) => {
-    const findProduct = products.find((prod) => prod.id === +event.target.id);
-    if (currentSale.includes(findProduct)) {
-      const listFilterCurrencyProduct = currentSale.filter(
-        (sale) => sale !== findProduct
-      );
-      findProduct.amount += 1;
-      setCurrentSale([...listFilterCurrencyProduct, findProduct]);
-    } else {
-      setCurrentSale([...currentSale, findProduct]);
-    }
-  };
+  const { handleAddToCart } = useContext(CartContext);
 
   return (
     <StyledProduct id={id}>
