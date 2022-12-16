@@ -36,6 +36,7 @@ const CartTotal = () => {
         children={"Remover todos"}
         handle={handleRemoveAllToCart}
         typeColor="default"
+        type={"grey"}
       />
     </StyledTotal>
   );
