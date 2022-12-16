@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { createContext } from "react";
 import { api } from "../services/api";
 import { CartProvider } from "./Cart/cartContext";
+import { SearchProvider } from "./SearchContext";
 
 export const UserContext = createContext({});
 
@@ -34,9 +35,11 @@ export const UserProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ products, filteredProducts, handleSearchProduct }}
+      value={{ products, filteredProducts, handleSearchProduct, setProducts }}
     >
-      <CartProvider>{children}</CartProvider>
+      <CartProvider>
+        <SearchProvider>{children}</SearchProvider>
+      </CartProvider>
     </UserContext.Provider>
   );
 };

@@ -4,8 +4,7 @@ export const ContainerHeader = styled.div`
   padding: 0 1rem;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 
   @media (min-width: 700px) {
@@ -16,6 +15,12 @@ export const ContainerHeader = styled.div`
   @media (min-width: 1024px) {
     margin: 0 auto;
     max-width: 1200px;
+  }
+
+  .containerNavigate {
+    display: flex;
+    align-items: center;
+    gap: 1.375rem;
   }
 `;
 
@@ -32,5 +37,9 @@ export const Container = styled.main`
     gap: 0;
     margin: 0 auto;
     max-width: 1200px;
+  }
+
+  section {
+    width: 100%;
   }
 `;

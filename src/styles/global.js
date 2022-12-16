@@ -29,6 +29,9 @@ export const GlobalStyle = createGlobalStyle`
         --color-grey-200: #828282;
         --color-grey-300: #e0e0e0;
         --color-grey-400: #f5f5f5;
+        --color-grey-500: #BDBDBD;
+        --color-grey-600: #F2F2F2;
+        --color-opacity: #33333380;
         --color-feedback-alert: #e60000;
         --color-feedback-sucess: #168821;
         --color-feedback-warning: #ffcd07;
@@ -50,6 +53,7 @@ export const GlobalStyle = createGlobalStyle`
 
     ::-webkit-scrollbar {
         width: 0.25rem;
+        height: 8px;
 
         @media (min-width: 1024px) {
             width: 0.375rem;

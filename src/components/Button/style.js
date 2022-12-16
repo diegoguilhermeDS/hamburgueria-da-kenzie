@@ -6,14 +6,22 @@ export const StyledButton = styled.button`
   font-size: .875rem;
   transition: 0.3s ease;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   ${({ type }) => {
     if (type === "medium") {
       return css`
         padding: .625rem 1.25rem;
       `;
+    } else if (type === "grey") {
+      return css`
+        height: 50px;
+      `
     } else {
       return css`
-        height: 2.5rem;
+        height: 40px;
         padding: 0 1.25rem;
       `;
     }

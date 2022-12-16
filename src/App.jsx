@@ -5,13 +5,15 @@ import { useState } from "react";
 import { GlobalStyle } from "./styles/global";
 import { Container } from "./styles/Container";
 import PreLoad from "./components/PreLoad";
-import { UserProvider } from "./providers/userContext";
+import { useContext } from "react";
+import { CartContext } from "./providers/Cart/cartContext";
 
 function App() {
   const [preloadState, setPreloadState] = useState(true);
+  const {showModal} = useContext(CartContext)
 
   return (
-    <UserProvider>
+    <>
       <GlobalStyle />
       {preloadState && <PreLoad setPreloadState={setPreloadState} />}
       {!preloadState && (
@@ -21,11 +23,11 @@ function App() {
             <section>
               <ProductsList />
             </section>
-            <Cart />
+            {showModal && <Cart />}
           </Container>
         </div>
       )}
-    </UserProvider>
+    </>
   );
 }
 

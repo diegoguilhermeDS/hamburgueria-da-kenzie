@@ -1,21 +1,10 @@
-import styled, { keyframes } from "styled-components";
-
-const addToCart = keyframes`
-  from {
-      transform: translateX(-100px);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-`;
+import styled from "styled-components";
 
 export const StyledCartProduct = styled.li`
   display: flex;
+  justify-content: space-between;
   max-height: 5rem;
   border-radius: var(--radius-2);
-  animation: ${addToCart} 1.3s ease;
 
   .containerProduct {
     display: flex;
@@ -30,9 +19,11 @@ export const StyledCartProduct = styled.li`
   }
 
   .infoProduct {
-    padding: 0.625rem;
+    height: 100%;
+    padding: 0 0.625rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: var(--gap-2);
 
     h3 {
@@ -43,19 +34,54 @@ export const StyledCartProduct = styled.li`
     }
   }
 
-  .containerButtoRemove {
+  .containerAmount {
+    background-color: var(--color-grey-300);
+    height: 34px;
+
     display: flex;
-    flex-direction: column;
-    gap: var(--gap-2);
-    width: 100%;
+    align-items: center;
+
+    .btnAmount {
+      height: 100%;
+      width: 30px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: var(--color-feedback-alert);
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+    .btnAmount:nth-child(3) {
+      padding-bottom: 4px;
+    }
+
+    .containerSpanAmount {
+      width: 40px;
+      height: 28px;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      background-color: #fff;
+    }
+
+  }
+
+  .containerButtoRemove {
     padding: 0.625rem;
     text-align: end;
 
-    button {
-      text-align: end;
-      font-weight: 500;
-      font-size: var(--font-size-6);
-      color: var(--color-grey-200);
+    .btnTrash {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px;
+
+      color: var(--color-grey-500);
     }
   }
 `;
