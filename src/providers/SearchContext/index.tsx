@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { createContext, useState } from "react";
+import { iSearchContext, iSearchProviderProps } from "./types";
 
-const SearchContext = createContext({});
+const SearchContext = createContext({} as iSearchContext);
 
-export const SearchProvider = ({ children }) => {
+export const SearchProvider = ({ children }: iSearchProviderProps) => {
   const [displayInput, setDisplayInput] = useState("none");
 
   const showInput = () => {

@@ -1,8 +1,9 @@
 import React from "react";
-import imgLogo from "../../assets/img/BurguerKenzie.png";
 
-const Logo = () => {
+const imgLogo: string = require("../../assets/img/BurguerKenzie.png")
+
+function Logo() {
   return <img src={imgLogo} alt="image_logo" className="logo" />;
-};
+}
 
 export default Logo;

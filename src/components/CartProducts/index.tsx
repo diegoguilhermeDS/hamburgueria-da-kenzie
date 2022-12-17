@@ -3,14 +3,20 @@ import { useContext } from "react";
 import { CartContext } from "../../providers/Cart/cartContext";
 import { StyledText } from "../../styles/typography";
 import { StyledCartProduct } from "./style";
-import trash from "../../assets/img/trash.png";
+import { iPorduct } from "../../providers/userContextTypes";
 
-const CartProducts = ({ product }) => {
+const trash: string = require("../../assets/img/trash.png")
+
+interface iCartProductsProps {
+  product: iPorduct,
+}
+
+const CartProducts = ({ product }: iCartProductsProps) => {
   const { name, id, img, amount } = product;
   const { handleRemoveToCart, handleAddAmount, handleRemoveAmount } = useContext(CartContext);
 
   return (
-    <StyledCartProduct id={id}>
+    <StyledCartProduct id={id + ""}>
       <div className="containerProduct">
         <div className="containerImageProduct">
           <img src={img} alt={`imagem do ${name}`} />
@@ -20,19 +26,19 @@ const CartProducts = ({ product }) => {
             {name}
           </StyledText>
           <div className="containerAmount">
-            <button className="btnAmount" id={id} onClick={handleRemoveAmount}>-</button>
+            <button className="btnAmount" id={id + ""} onClick={handleRemoveAmount}>-</button>
             <div className="containerSpanAmount">
               <StyledText tag="span" fontSize="6" colorText="grey-50">
                 {amount}
               </StyledText>
             </div>
-            <button className="btnAmount" id={id} onClick={handleAddAmount}>+</button>
+            <button className="btnAmount" id={id + ""} onClick={handleAddAmount}>+</button>
           </div>
         </div>
       </div>
       <div className="containerButtoRemove">
-        <button className="btnTrash" id={id} onClick={handleRemoveToCart}>
-          <img src={trash} alt="icone da lixeira" id={id} />
+        <button className="btnTrash" id={id + ""} onClick={handleRemoveToCart}>
+          <img src={trash} alt="icone da lixeira" id={id + ""} />
         </button>
       </div>
     </StyledCartProduct>

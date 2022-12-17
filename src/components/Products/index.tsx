@@ -1,16 +1,21 @@
 import React from "react";
 import { useContext } from "react";
 import { CartContext } from "../../providers/Cart/cartContext";
+import { iPorduct } from "../../providers/userContextTypes";
 import { StyledText } from "../../styles/typography";
 import Button from "../Button";
 import { StyledProduct } from "./style";
 
-const Products = ({ product }) => {
+interface iProductsProps {
+  product: iPorduct,
+}
+
+const Products = ({ product }: iProductsProps) => {
   const { name, category, price, id, img } = product;
   const { handleAddToCart } = useContext(CartContext);
 
   return (
-    <StyledProduct id={id}>
+    <StyledProduct id={id + ""}>
       <img src={img} alt={`imagem do ${name}`} />
       <div>
         <StyledText tag="h2" fontWeight={700} fontSize="3">
@@ -25,7 +30,7 @@ const Products = ({ product }) => {
           colorText={"brand"}
           fontSize="5"
         >{`R$ ${price.toFixed(2).replace(".", ",")}`}</StyledText>
-        <Button id={id} children={"Adicionar"} handle={handleAddToCart} />
+        <Button id={id + ""} children={"Adicionar"} handle={handleAddToCart} />
       </div>
     </StyledProduct>
   );

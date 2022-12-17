@@ -9,11 +9,11 @@ const CartTotal = () => {
   const { currentSale, handleRemoveAllToCart } = useContext(CartContext);
 
   const valueCart = currentSale.map((sale) => {
-    const newSale = sale.price * sale.amount;
+    const newSale = sale.amount && sale.price * sale.amount;
     return newSale;
   });
   const valueTotal = valueCart.reduce(
-    (oldValue, currencyValue) => oldValue + currencyValue,
+    (oldValue, currencyValue) => oldValue && currencyValue ? oldValue + currencyValue :
     0
   );
 
@@ -29,14 +29,14 @@ const CartTotal = () => {
           fontSize="5"
           colorText="grey-50"
         >
-          R$ {valueTotal.toFixed(2).replace(".", ",")}
+          R$ {valueTotal?.toFixed(2).replace(".", ",")}
         </StyledText>
       </div>
       <Button
         children={"Remover todos"}
         handle={handleRemoveAllToCart}
         typeColor="default"
-        type={"grey"}
+        typeBtn={"grey"}
       />
     </StyledTotal>
   );

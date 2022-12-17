@@ -17,7 +17,7 @@ const InputSearch = () => {
         onChange={handleSearchProduct}
         placeholder="Digitar Pesquisa"
       />
-      <Button children={<FaSearch/>} type={"medium"} handle={noneInput}/>
+      <Button children={<FaSearch/>} typeBtn={"medium"} handle={noneInput}/>
     </StyledInputContainer>
   );
 };

@@ -1,5 +1,9 @@
 import styled, { keyframes } from "styled-components";
 
+interface iStyledInputContainerProps {
+  display: string,
+}
+
 const animationShowInput = keyframes`
   0% {
     transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
@@ -16,7 +20,7 @@ const animationShowInput = keyframes`
 `;
 
 
-export const StyledInputContainer = styled.div`
+export const StyledInputContainer = styled.div<iStyledInputContainerProps>`
   width: 96%;
   display: ${({ display }) => (display ? display : "none")};
   align-items: center;

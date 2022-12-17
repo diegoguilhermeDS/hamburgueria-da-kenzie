@@ -37,6 +37,7 @@ export const StyledCartProduct = styled.li`
   .containerAmount {
     background-color: var(--color-grey-300);
     height: 34px;
+    max-width: 100PX;
 
     display: flex;
     align-items: center;
@@ -50,6 +51,7 @@ export const StyledCartProduct = styled.li`
       justify-content: center;
 
       color: var(--color-feedback-alert);
+      background-color: var(--color-grey-300);
       font-size: 22px;
       font-weight: 400;
     }
