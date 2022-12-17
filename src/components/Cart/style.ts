@@ -1,5 +1,9 @@
 import styled, { css, keyframes } from "styled-components";
 
+interface iStyledContainerModalCartProps {
+  statusModal: boolean
+}
+
 const animationShowModal = keyframes`
   0% {
     transform: translateY(-500px);
@@ -92,7 +96,7 @@ export const StyledContainerModalCart = styled.div`
   background-color: var(--color-opacity);
 `;
 
-export const StyledModalCart = styled.div`
+export const StyledModalCart = styled.div<iStyledContainerModalCartProps>`
   display: flex;
   flex-direction: column;
   min-height: 14.0625rem;

@@ -1,8 +1,16 @@
 import styled, { css } from "styled-components";
 import BaseText from "./BaseText";
 
-export const StyledText = styled(BaseText)`
+interface iStyledTextProps {
+  fontWeight?: number,
+  fontSize?: "1" | "2" | "3" | "4" | "5" | "6" ,
+  colorText?: "grey-50" | "brand" | "white"
+}
+
+
+export const StyledText = styled(BaseText)<iStyledTextProps>`
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : 400)};
+
   ${({ fontSize }) => {
     switch (fontSize) {
       case "1":

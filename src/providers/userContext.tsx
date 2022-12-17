@@ -3,19 +3,20 @@ import { createContext } from "react";
 import { api } from "../services/api";
 import { CartProvider } from "./Cart/cartContext";
 import { SearchProvider } from "./SearchContext";
+import { iPorduct, iUserContext, iUserProviderProps } from "./userContextTypes";
 
-export const UserContext = createContext({});
+export const UserContext = createContext({} as iUserContext);
 
-export const UserProvider = ({ children }) => {
-  const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
+export const UserProvider = ({ children }: iUserProviderProps) => {
+  const [products, setProducts] = useState([] as iPorduct[]);
+  const [filteredProducts, setFilteredProducts] = useState([] as iPorduct[]);
 
   useEffect(() => {
     async function getProducts() {
       try {
         const response = await api.get("");
         setProducts(response.data);
-        response.data.map((dat) => (dat.amount = 1));
+        response.data.map((dat: iPorduct) => (dat.amount = 1));
         setFilteredProducts(response.data);
       } catch (error) {
         console.log(error);
@@ -25,9 +26,9 @@ export const UserProvider = ({ children }) => {
     getProducts();
   }, []);
 
-  const handleSearchProduct = (event) => {
+  const handleSearchProduct = (event: any) => {
     const findProduct = event.target.value;
-    const filterProducts = products.filter((product) =>
+    const filterProducts = products.filter((product: iPorduct) =>
       product.name.toLowerCase().includes(findProduct.toLowerCase())
     );
     setFilteredProducts(filterProducts);
@@ -44,4 +45,4 @@ export const UserProvider = ({ children }) => {
   );
 };
 
-/* export const user = () => useContext(UserContext); */
+

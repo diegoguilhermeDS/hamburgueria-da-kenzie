@@ -1,6 +1,11 @@
 import styled, { css } from "styled-components";
 
-export const StyledButton = styled.button`
+interface iStyledButton {
+  typeBtn?: string
+  typeColor?: string
+}
+
+export const StyledButton = styled.button<iStyledButton>`
   border-radius: var(--radius-1);
   font-weight: 500;
   font-size: .875rem;
@@ -10,12 +15,12 @@ export const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
 
-  ${({ type }) => {
-    if (type === "medium") {
+  ${({ typeBtn }) => {
+    if (typeBtn === "medium") {
       return css`
         padding: .625rem 1.25rem;
       `;
-    } else if (type === "grey") {
+    } else if (typeBtn === "grey") {
       return css`
         height: 50px;
       `

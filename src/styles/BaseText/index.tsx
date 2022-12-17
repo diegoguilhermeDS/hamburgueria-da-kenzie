@@ -1,6 +1,12 @@
 import React from "react";
 
-const BaseText = ({ children, tag, className }) => {
+interface iBaseTextProps {
+  children: React.ReactNode,
+  tag: "h1" | "h2" | "h3" | "span" | "small",
+  className?: string 
+}
+
+const BaseText = ({ children, tag, className }: iBaseTextProps) => {
   return (
     <>
       {tag === "h1" && <h1 className={className}>{children}</h1>}

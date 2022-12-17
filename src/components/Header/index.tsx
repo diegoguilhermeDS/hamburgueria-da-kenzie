@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { FaSignOutAlt } from "react-icons/fa";
+import React from "react";
 import { ContainerHeader } from "../../styles/Container";
 import InputSearch from "../InputSearch";
 import Logo from "../Logo";
@@ -10,7 +9,6 @@ import { StyledHeader } from "./style";
 
 const Header = () => {
   
-
   return (
     <StyledHeader className="header">
       <ContainerHeader>
