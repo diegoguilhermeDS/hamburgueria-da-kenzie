@@ -69,4 +69,8 @@ export const StyledInputContainer = styled.div<iStyledInputContainerProps>`
     width: 22.8125rem;
     animation: none;
   }
+
+  svg {
+    animation: none;
+  }
 `;

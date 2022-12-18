@@ -13,6 +13,7 @@ const PreLoad = ({setPreloadState}: iPreLoadProps) => {
   useEffect(() => {  
     setTimeout(() => {
       setPreloadState(false)
+      localStorage.setItem("@darkMode", JSON.stringify(false))
     }, 2000)
   }, [setPreloadState])
 

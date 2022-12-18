@@ -1,14 +1,23 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 interface iStyledButton {
-  typeBtn?: string
-  typeColor?: string
+  typeBtn?: string;
+  typeColor?: string;
 }
+
+const SpinnerAnimation = keyframes`
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
 
 export const StyledButton = styled.button<iStyledButton>`
   border-radius: var(--radius-1);
   font-weight: 500;
-  font-size: .875rem;
+  font-size: 0.875rem;
   transition: 0.3s ease;
 
   display: flex;
@@ -18,12 +27,12 @@ export const StyledButton = styled.button<iStyledButton>`
   ${({ typeBtn }) => {
     if (typeBtn === "medium") {
       return css`
-        padding: .625rem 1.25rem;
+        padding: 0.625rem 1.25rem;
       `;
     } else if (typeBtn === "grey") {
       return css`
         height: 50px;
-      `
+      `;
     } else {
       return css`
         height: 40px;
@@ -54,4 +63,17 @@ export const StyledButton = styled.button<iStyledButton>`
       `;
     }
   }}
+
+  &:disabled {
+    cursor: no-drop;
+    filter: grayscale(0.5);
+
+    &:hover {
+      background-color: var(--color-brand-100);
+    }
+  }
+
+  svg {
+    animation: ${SpinnerAnimation} 1.6s linear infinite both;
+  }
 `;

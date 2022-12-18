@@ -41,8 +41,8 @@ export const GlobalStyle = createGlobalStyle`
         --font-size-2: 1.375rem;
         --font-size-3: 1.125rem;
         --font-size-4: 1rem;
-        --font-size-5: 0.875rem;
-        --font-size-6: 0.75rem;
+        --font-size-5: .875rem;
+        --font-size-6: .75rem;
 
         --gap-1: 1.25rem;
         --gap-2: .75rem;
@@ -52,11 +52,11 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     ::-webkit-scrollbar {
-        width: 0.25rem;
+        width: .25rem;
         height: 8px;
 
         @media (min-width: 1024px) {
-            width: 0.375rem;
+            width: .375rem;
         }
     }
 

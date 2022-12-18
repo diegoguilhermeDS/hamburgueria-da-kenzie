@@ -3,15 +3,17 @@ import { StyledButton } from "./style";
 
 interface iButtonProps {
   children: React.ReactNode, 
-  handle: (event: any) => void, 
+  type?: "button" | "submit" | "reset" | undefined,
+  handle?: (event: any) => void, 
   id?: string | undefined, 
   typeBtn?: string, 
-  typeColor?: string
+  typeColor?: string,
+  disabled?: boolean
 }
 
-const Button = ({ children, handle, id, typeBtn, typeColor }: iButtonProps) => {
+const Button = ({ children, handle, id, typeBtn, typeColor, type, disabled }: iButtonProps) => {
   return (
-    <StyledButton id={id} onClick={handle} typeBtn={typeBtn} typeColor={typeColor}>
+    <StyledButton id={id} type={type} onClick={handle} typeBtn={typeBtn} typeColor={typeColor} disabled={disabled}>
       {children}
     </StyledButton>
   );
