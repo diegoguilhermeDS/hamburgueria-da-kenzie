@@ -18,4 +18,12 @@ export interface iUserContext {
   filteredProducts: iPorduct[];
   handleSearchProduct: (event: any) => void;
   setProducts: React.Dispatch<React.SetStateAction<iPorduct[]>>;
+  handleLogin: (data: iDataLogin) => void;
+  loadingBtn: boolean;
+  loadingPage: boolean
+}
+
+export interface iDataLogin {
+  email: string,
+  password: string
 }
