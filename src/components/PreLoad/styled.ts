@@ -72,12 +72,12 @@ export const StyledPreLoad = styled.div`
   animation: ${bgAnimation} 5s ease infinite alternate;
 
   .burguerImg {
-    width: 200px;
+    width: 12.5rem;
     animation: ${jelloHorizontal} 0.9s both;
   }
 
   .logoImg {
-    width: 200px;
+    width: 12.5rem;
     animation: ${rollInBlurredLeft} 0.65s cubic-bezier(0.23, 1, 0.32, 1) 1s both;
   }
 `;

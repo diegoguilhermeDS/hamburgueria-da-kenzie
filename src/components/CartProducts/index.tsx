@@ -5,15 +5,16 @@ import { StyledText } from "../../styles/typography";
 import { StyledCartProduct } from "./style";
 import { iPorduct } from "../../providers/userContextTypes";
 
-const trash: string = require("../../assets/img/trash.png")
+const trash: string = require("../../assets/img/trash.png");
 
 interface iCartProductsProps {
-  product: iPorduct,
+  product: iPorduct;
 }
 
 const CartProducts = ({ product }: iCartProductsProps) => {
   const { name, id, img, amount } = product;
-  const { handleRemoveToCart, handleAddAmount, handleRemoveAmount } = useContext(CartContext);
+  const { handleRemoveToCart, handleAddAmount, handleRemoveAmount } =
+    useContext(CartContext);
 
   return (
     <StyledCartProduct id={id + ""}>
@@ -26,13 +27,25 @@ const CartProducts = ({ product }: iCartProductsProps) => {
             {name}
           </StyledText>
           <div className="containerAmount">
-            <button className="btnAmount" id={id + ""} onClick={handleRemoveAmount}>-</button>
+            <button
+              className="btnAmount"
+              id={id + ""}
+              onClick={handleRemoveAmount}
+            >
+              -
+            </button>
             <div className="containerSpanAmount">
               <StyledText tag="span" fontSize="6" colorText="grey-50">
                 {amount}
               </StyledText>
             </div>
-            <button className="btnAmount" id={id + ""} onClick={handleAddAmount}>+</button>
+            <button
+              className="btnAmount"
+              id={id + ""}
+              onClick={handleAddAmount}
+            >
+              +
+            </button>
           </div>
         </div>
       </div>

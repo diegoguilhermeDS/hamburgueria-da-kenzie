@@ -4,7 +4,6 @@ export interface iCartProviderProps {
   children: React.ReactNode;
 }
 
-
 export interface iCartContext {
   currentSale: iPorduct[];
   handleAddToCart: (event: any) => void;

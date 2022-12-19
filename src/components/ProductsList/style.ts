@@ -9,7 +9,7 @@ export const StyledProductsList = styled.ul`
   @media (min-width: 1024px) {
     width: 100%;
     display: grid;
-    justify-content: center ;
+    justify-content: center;
     grid-template-columns: repeat(3, auto);
   }
 

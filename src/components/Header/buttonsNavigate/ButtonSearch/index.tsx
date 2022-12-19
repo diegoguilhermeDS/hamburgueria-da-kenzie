@@ -4,7 +4,7 @@ import { useSearch } from "../../../../providers/SearchContext";
 import { StyledButtonSearch } from "./style";
 
 const ButtonSearch = () => {
-  const {showInput} = useSearch()
+  const { showInput } = useSearch();
 
   return (
     <StyledButtonSearch onClick={showInput}>

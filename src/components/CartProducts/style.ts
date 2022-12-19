@@ -36,15 +36,15 @@ export const StyledCartProduct = styled.li`
 
   .containerAmount {
     background-color: var(--color-grey-300);
-    height: 34px;
-    max-width: 100PX;
+    height: 2.125rem;
+    max-width: 100px;
 
     display: flex;
     align-items: center;
 
     .btnAmount {
       height: 100%;
-      width: 30px;
+      width: 1.875rem;
 
       display: flex;
       align-items: center;
@@ -52,7 +52,7 @@ export const StyledCartProduct = styled.li`
 
       color: var(--color-feedback-alert);
       background-color: var(--color-grey-300);
-      font-size: 22px;
+      font-size: 1.375rem;
       font-weight: 400;
     }
 
@@ -63,14 +63,13 @@ export const StyledCartProduct = styled.li`
     .containerSpanAmount {
       width: 40px;
       height: 28px;
-      
+
       display: flex;
       justify-content: center;
       align-items: center;
-      
+
       background-color: #fff;
     }
-
   }
 
   .containerButtoRemove {

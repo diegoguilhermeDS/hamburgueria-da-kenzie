@@ -7,7 +7,7 @@ import Button from "../Button";
 import { StyledProduct } from "./style";
 
 interface iProductsProps {
-  product: iPorduct,
+  product: iPorduct;
 }
 
 const Products = ({ product }: iProductsProps) => {

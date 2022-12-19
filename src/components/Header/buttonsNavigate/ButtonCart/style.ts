@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const StyledButtonCart = styled.button`
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
 
   svg {
     transform: scale(1.8);
@@ -12,17 +12,17 @@ export const StyledButtonCart = styled.button`
 
   span {
     position: absolute;
-    top: -14px;
-    right: -7px;
-    width: 20px;
-    height: 26px;
-    padding: 4px;
+    top: -.875rem;
+    right: -.4375rem;
+    width: 1.25rem;
+    height: 1.625rem;
+    padding: .25rem;
 
     background: var(--color-brand-100);
-    border-radius: 7px;
+    border-radius: .4375rem;
 
     font-weight: 900;
-    font-size: 14px;
+    font-size: .875rem;
     color: #fff;
   }
 `;

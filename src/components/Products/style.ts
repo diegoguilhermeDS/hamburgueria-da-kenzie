@@ -20,7 +20,7 @@ export const StyledProduct = styled.li`
   border: 2px solid var(--color-grey-300);
   border-radius: var(--radius-2);
   animation: ${showProduct} 1s ease;
-  transition: .5s ease;
+  transition: 0.5s ease;
 
   &:hover {
     border: 2px solid var(--color-brand-100);

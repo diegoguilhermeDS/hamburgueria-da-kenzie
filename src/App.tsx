@@ -6,9 +6,10 @@ import { RoutesMain as Routes } from "./routes";
 import { ToastContainer } from "react-toastify";
 
 function App() {
-  const darkMode: boolean = JSON.parse(localStorage.getItem("@darkMode") || "true")
+  const darkMode: boolean = JSON.parse(
+    localStorage.getItem("@darkMode") || "true"
+  );
   const [preloadState, setPreloadState] = useState(darkMode);
-
 
   return (
     <>

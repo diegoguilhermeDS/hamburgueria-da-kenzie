@@ -1,9 +1,9 @@
 import React from "react";
 
 interface iBaseTextProps {
-  children: React.ReactNode,
-  tag: "h1" | "h2" | "h3" | "span" | "small",
-  className?: string 
+  children: React.ReactNode;
+  tag: "h1" | "h2" | "h3" | "span" | "small";
+  className?: string;
 }
 
 const BaseText = ({ children, tag, className }: iBaseTextProps) => {

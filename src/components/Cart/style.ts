@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from "styled-components";
 
 interface iStyledContainerModalCartProps {
-  statusModal: boolean
+  statusModal: boolean;
 }
 
 const animationShowModal = keyframes`
@@ -87,7 +87,7 @@ export const StyledContainerModalCart = styled.div`
 
   width: 100%;
   height: 100vh;
-  padding: .625rem;
+  padding: 0.625rem;
 
   display: flex;
   align-items: center;
@@ -110,10 +110,10 @@ export const StyledModalCart = styled.div<iStyledContainerModalCartProps>`
       return css`
         animation: ${animationShowModal} 1.1s both;
       `;
-    }  else {
+    } else {
       return css`
         animation: ${animationCloseModal} 1.5s both;
-      `
+      `;
     }
   }}
 

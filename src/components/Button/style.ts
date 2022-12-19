@@ -31,11 +31,11 @@ export const StyledButton = styled.button<iStyledButton>`
       `;
     } else if (typeBtn === "grey") {
       return css`
-        height: 50px;
+        height: 3.125rem;
       `;
     } else {
       return css`
-        height: 40px;
+        height: 2.5rem;
         padding: 0 1.25rem;
       `;
     }

@@ -5,7 +5,7 @@ export interface iSearchProviderProps {
 }
 
 export interface iSearchContext {
-  displayInput: string,
-  showInput: () => void,
-  noneInput: () => void,
+  displayInput: string;
+  showInput: () => void;
+  noneInput: () => void;
 }

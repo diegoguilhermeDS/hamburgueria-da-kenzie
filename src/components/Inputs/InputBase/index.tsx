@@ -8,18 +8,13 @@ interface iInput {
   id?: string;
   label: string;
   register: UseFormRegisterReturn;
-  error?: string
+  error?: string;
 }
 
 const Input = ({ typeInput, id, label, register, error }: iInput) => {
-
   return (
     <StyledFieldset errorValidate={error ? true : false}>
-      <input
-        type={typeInput}
-        {...register}
-        placeholder=" "
-      />
+      <input type={typeInput} {...register} placeholder=" " />
       <label htmlFor={id && id} className="labelInput">
         {label}
       </label>

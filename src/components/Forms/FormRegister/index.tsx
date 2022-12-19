@@ -11,18 +11,24 @@ import { FaSpinner } from "react-icons/fa";
 import { schemaRegister } from "../../../validations/schemaRegister";
 import { iDataRegister } from "../../../providers/userContextTypes";
 
-
 const FormRegister = () => {
-  const {handleRegister, loadingBtn} = useContext(UserContext);
+  const { handleRegister, loadingBtn } = useContext(UserContext);
 
-  const { register, handleSubmit, formState: {errors, isDirty, isValid} } = useForm<iDataRegister>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isDirty, isValid },
+  } = useForm<iDataRegister>({
     mode: "onBlur",
     resolver: yupResolver(schemaRegister),
   });
 
-    
   return (
-    <StyledFormLogin onSubmit={handleSubmit(handleRegister)} noValidate={true} autoComplete="off">
+    <StyledFormLogin
+      onSubmit={handleSubmit(handleRegister)}
+      noValidate={true}
+      autoComplete="off"
+    >
       <div className="containerHeaderFormRegister">
         <StyledText tag="h2" fontSize="3" fontWeight={700}>
           Cadastro
