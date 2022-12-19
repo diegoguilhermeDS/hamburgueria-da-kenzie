@@ -1,4 +1,4 @@
-import React, { FocusEvent, useContext } from "react";
+import React, { FocusEvent, useContext, useEffect } from "react";
 import { createContext, useState } from "react";
 import { UserContext } from "../userContext";
 import { iPorduct } from "../userContextTypes";
@@ -17,15 +17,19 @@ export const CartProvider = ({ children }: iCartProviderProps) => {
     const findProduct = products.find(
       (prod: iPorduct) => prod.id === +event.target.id
     );
-    if (findProduct && currentSale.includes(findProduct)) {
+   
+    if (findProduct && currentSale.find((prod) => prod.id === findProduct?.id) !== undefined) {
       const listFilterCurrencyProduct = currentSale.filter(
-        (sale) => sale !== findProduct
+        (sale) => sale.id !== findProduct.id
       );
       findProduct?.amount
         ? (findProduct.amount += 1)
         : setCurrentSale([...listFilterCurrencyProduct, findProduct]);
+        localStorage.setItem("@CartBurguer", JSON.stringify([...listFilterCurrencyProduct, findProduct]))
     } else {
       findProduct && setCurrentSale([...currentSale, findProduct]);
+      localStorage.setItem("@CartBurguer", JSON.stringify([...currentSale, findProduct]))
+      
     }
   };
 
@@ -45,6 +49,8 @@ export const CartProvider = ({ children }: iCartProviderProps) => {
       );
       setProducts([...listFilterCurrencyProduct, findProduct]);
     }
+
+    localStorage.setItem("@CartBurguer", JSON.stringify(filterProductRemove))
   };
 
   const handleAddAmount = (event: FocusEvent<HTMLInputElement>) => {
@@ -55,6 +61,7 @@ export const CartProvider = ({ children }: iCartProviderProps) => {
         );
       findProduct?.amount && findProduct.amount++ 
      setCurrentSale([...listFilterCurrencyProduct, findProduct]);
+     localStorage.setItem("@CartBurguer", JSON.stringify([...listFilterCurrencyProduct, findProduct]))
     }
   };
 
@@ -69,15 +76,18 @@ export const CartProvider = ({ children }: iCartProviderProps) => {
         (sale) => sale !== findProduct
       );
       setCurrentSale([...listFilterCurrencyProduct, findProduct]);
+      localStorage.setItem("@CartBurguer", JSON.stringify([...listFilterCurrencyProduct, findProduct]))
     } else {
       const filterProductRemove = currentSale.filter((prod: iPorduct) => {
         return prod.id !== +event.target.id;
       });
       setCurrentSale(filterProductRemove);
+      localStorage.setItem("@CartBurguer", JSON.stringify(filterProductRemove))
     }
   };
 
   const handleRemoveAllToCart = () => {
+    products.map(prod => prod.amount = 1)
     setCurrentSale([]);
   };
 
