@@ -20,9 +20,14 @@ export const StyledProduct = styled.li`
   border: 2px solid var(--color-grey-300);
   border-radius: var(--radius-2);
   animation: ${showProduct} 1s ease;
+  transition: .5s ease;
 
   &:hover {
     border: 2px solid var(--color-brand-100);
+
+    div > button {
+      background-color: var(--color-brand-100);
+    }
   }
 
   @media (min-width: 1024px) {
@@ -53,6 +58,7 @@ export const StyledProduct = styled.li`
 
   div > button {
     width: 40%;
+    background-color: var(--color-grey-500);
 
     @media (min-width: 1024px) {
       width: 50%;
