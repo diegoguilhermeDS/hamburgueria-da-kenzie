@@ -6,10 +6,12 @@ import { notify } from "../components/Toast";
 import { api } from "../services/api";
 import { getProducts } from "../services/getProducts";
 import { login } from "../services/login";
+import { register } from "../services/register";
 import { CartProvider } from "./Cart/cartContext";
 import { SearchProvider } from "./SearchContext";
 import {
   iDataLogin,
+  iDataRegister,
   iPorduct,
   iUserContext,
   iUserProviderProps,
@@ -35,7 +37,6 @@ export const UserProvider = ({ children }: iUserProviderProps) => {
           const newProduct = [...(products as iPorduct[])];
           newProduct.map((prod) => (prod.amount = 1));
           setFilteredProducts(newProduct);
-
         } catch (error) {
           localStorage.removeItem("@TokenBurguer");
         }
@@ -80,6 +81,24 @@ export const UserProvider = ({ children }: iUserProviderProps) => {
     }
   };
 
+  const handleRegister = async (data: iDataRegister) => {
+    try {
+      setLoadingBtn(true);
+
+      delete data.confirmPassword;
+      const response =  await register(data);
+      if (response) {
+        notify("Cadastro efetuado com sucesso", "sucess");
+        navigate("/");
+      }
+
+    } catch (error) {
+      notify("E-mail já existe","error");
+    } finally {
+      setLoadingBtn(false);
+    }
+  };
+
   const handleSearchProduct = (event: FocusEvent<HTMLInputElement>) => {
     const findProduct = event.target.value;
     const filterProducts = products.filter((product: iPorduct) =>
@@ -96,6 +115,7 @@ export const UserProvider = ({ children }: iUserProviderProps) => {
         handleSearchProduct,
         setProducts,
         handleLogin,
+        handleRegister,
         loadingBtn,
         loadingPage,
       }}

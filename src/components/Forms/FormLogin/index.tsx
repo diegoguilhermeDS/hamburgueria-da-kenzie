@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Link } from "react-router-dom";
@@ -9,11 +9,8 @@ import Input from "../../Inputs/InputBase";
 import { StyledFormLogin } from "./style";
 import { UserContext } from "../../../providers/userContext";
 import { FaSpinner } from "react-icons/fa";
+import { iDataLogin } from "../../../providers/userContextTypes";
 
-interface iDataLogin {
-  email: string,
-  password: string
-}
 
 const FormLogin = () => {
   const {handleLogin, loadingBtn} = useContext(UserContext);
