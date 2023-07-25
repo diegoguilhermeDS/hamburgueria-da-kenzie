@@ -5,7 +5,7 @@ import { StyledButtonCart } from "./style";
 
 const ButtonCart = () => {
   const { currentSale, handleShowModal } = useContext(CartContext);
-  
+
   return (
     <StyledButtonCart onClick={handleShowModal}>
       <FaShoppingCart />

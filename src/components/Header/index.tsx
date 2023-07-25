@@ -8,7 +8,6 @@ import ButtonSingOut from "./buttonsNavigate/ButtonSingOut";
 import { StyledHeader } from "./style";
 
 const Header = () => {
-  
   return (
     <StyledHeader className="header">
       <ContainerHeader>
@@ -16,8 +15,8 @@ const Header = () => {
         <div className="containerNavigate">
           <InputSearch />
           <ButtonSearch />
-          <ButtonCart/>
-          <ButtonSingOut/>
+          <ButtonCart />
+          <ButtonSingOut />
         </div>
       </ContainerHeader>
     </StyledHeader>

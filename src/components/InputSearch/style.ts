@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
 interface iStyledInputContainerProps {
-  display: string,
+  display: string;
 }
 
 const animationShowInput = keyframes`
@@ -19,7 +19,6 @@ const animationShowInput = keyframes`
   }
 `;
 
-
 export const StyledInputContainer = styled.div<iStyledInputContainerProps>`
   width: 96%;
   display: ${({ display }) => (display ? display : "none")};
@@ -35,11 +34,10 @@ export const StyledInputContainer = styled.div<iStyledInputContainerProps>`
   transition: 0.3s ease;
 
   position: absolute;
-  //top: 6px;
   left: 10px;
   z-index: 2;
 
-  animation: ${animationShowInput} 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both; 
+  animation: ${animationShowInput} 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
 
   input {
     outline: none;

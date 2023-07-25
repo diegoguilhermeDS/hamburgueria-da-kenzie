@@ -10,7 +10,7 @@ export interface iPorduct {
   category: string;
   price: number;
   img: string;
-  amount?: number | undefined
+  amount?: number | undefined;
 }
 
 export interface iUserContext {
@@ -21,17 +21,17 @@ export interface iUserContext {
   handleLogin: (data: iDataLogin) => void;
   handleRegister: (data: iDataRegister) => void;
   loadingBtn: boolean;
-  loadingPage: boolean
+  loadingPage: boolean;
 }
 
 export interface iDataLogin {
-  email: string,
-  password: string
+  email: string;
+  password: string;
 }
 
 export interface iDataRegister {
-  name: string
-  email: string,
-  password: string,
-  confirmPassword?: string
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword?: string;
 }

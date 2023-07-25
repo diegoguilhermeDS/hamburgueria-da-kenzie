@@ -11,18 +11,24 @@ import { UserContext } from "../../../providers/userContext";
 import { FaSpinner } from "react-icons/fa";
 import { iDataLogin } from "../../../providers/userContextTypes";
 
-
 const FormLogin = () => {
-  const {handleLogin, loadingBtn} = useContext(UserContext);
+  const { handleLogin, loadingBtn } = useContext(UserContext);
 
-  const { register, handleSubmit, formState: {errors, isDirty, isValid} } = useForm<iDataLogin>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isDirty, isValid },
+  } = useForm<iDataLogin>({
     mode: "onBlur",
     resolver: yupResolver(schemaLogin),
   });
 
-    
   return (
-    <StyledFormLogin onSubmit={handleSubmit(handleLogin)} noValidate={true} autoComplete="off">
+    <StyledFormLogin
+      onSubmit={handleSubmit(handleLogin)}
+      noValidate={true}
+      autoComplete="off"
+    >
       <StyledText tag="h2" fontSize="3" fontWeight={700}>
         Login
       </StyledText>
@@ -44,7 +50,12 @@ const FormLogin = () => {
         type="submit"
         disabled={!isDirty || !isValid}
       />
-      <StyledText tag="small" fontSize="6" colorText="grey-50" className="smallInfor">
+      <StyledText
+        tag="small"
+        fontSize="6"
+        colorText="grey-50"
+        className="smallInfor"
+      >
         Crie sua conta para saborear muitas delícias e matar sua fome!
       </StyledText>
       <Link to={"/register"}>Cadastrar</Link>

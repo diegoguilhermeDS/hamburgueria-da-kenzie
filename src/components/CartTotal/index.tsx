@@ -12,9 +12,8 @@ const CartTotal = () => {
     const newSale = sale.amount && sale.price * sale.amount;
     return newSale;
   });
-  const valueTotal = valueCart.reduce(
-    (oldValue, currencyValue) => oldValue && currencyValue ? oldValue + currencyValue :
-    0
+  const valueTotal = valueCart.reduce((oldValue, currencyValue) =>
+    oldValue && currencyValue ? oldValue + currencyValue : 0
   );
 
   return (

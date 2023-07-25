@@ -9,26 +9,26 @@ export const StyledFieldset = styled.fieldset<iStyledFieldsetProps>`
   border: none;
   position: relative;
 
-  margin-bottom: 10px;
+  margin-bottom: .625rem;
 
   label {
     font-weight: 400;
     color: #999999;
 
     position: absolute;
-    left: 16px;
-    padding: 0 4px;
+    left: 1rem;
+    padding: 0 .25rem;
 
     transition: 0.5s ease;
     font-size: var(--font-size-5);
-    top: 15px;
+    top: .9375rem;
     background-color: transparent;
   }
 
   input {
     width: 100%;
-    height: 50px;
-    padding: 0 15px;
+    height: 3.125rem;
+    padding: 0 .9375rem;
 
     outline: none;
     &:not(:placeholder-shown):not(:focus) {
@@ -47,18 +47,18 @@ export const StyledFieldset = styled.fieldset<iStyledFieldsetProps>`
       }}
     }
 
-    ${({errorValidate}) => {
-        if (errorValidate === true) {
-          return css`
-            border: 2px solid var(--color-feedback-alert);
-            background-color: var(--color-grey-400);
-          `;
-        } else {
-          return css`
-            border: none;
-            background-color: var(--color-grey-400);
-          `;
-        }
+    ${({ errorValidate }) => {
+      if (errorValidate === true) {
+        return css`
+          border: 2px solid var(--color-feedback-alert);
+          background-color: var(--color-grey-400);
+        `;
+      } else {
+        return css`
+          border: none;
+          background-color: var(--color-grey-400);
+        `;
+      }
     }}
 
     border-radius: var(--radius-1);
@@ -73,7 +73,7 @@ export const StyledFieldset = styled.fieldset<iStyledFieldsetProps>`
 
     &:focus ~ label,
     &:not(:placeholder-shown):not(:focus) ~ label {
-      top: -8px;
+      top: -.5rem;
 
       font-size: var(--font-size-6);
       background-color: #fff;

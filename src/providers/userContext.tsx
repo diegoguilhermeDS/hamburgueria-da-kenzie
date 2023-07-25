@@ -86,14 +86,13 @@ export const UserProvider = ({ children }: iUserProviderProps) => {
       setLoadingBtn(true);
 
       delete data.confirmPassword;
-      const response =  await register(data);
+      const response = await register(data);
       if (response) {
         notify("Cadastro efetuado com sucesso", "sucess");
         navigate("/");
       }
-
     } catch (error) {
-      notify("E-mail já existe","error");
+      notify("E-mail já existe", "error");
     } finally {
       setLoadingBtn(false);
     }

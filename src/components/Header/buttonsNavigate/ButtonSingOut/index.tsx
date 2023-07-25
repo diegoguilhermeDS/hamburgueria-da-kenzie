@@ -5,8 +5,7 @@ import { toast } from "react-toastify";
 import { StyledButtonSingOut } from "./style";
 
 const ButtonSingOut = () => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSingOut = () => {
     toast("Obrigado por nos visitar, volte sempre!", {
@@ -15,9 +14,9 @@ const ButtonSingOut = () => {
       autoClose: 2000,
       icon: "🍔",
     });
-    localStorage.removeItem("@TokenBurguer")
-    navigate("/")
-  }
+    localStorage.removeItem("@TokenBurguer");
+    navigate("/");
+  };
 
   return (
     <StyledButtonSingOut onClick={handleSingOut}>

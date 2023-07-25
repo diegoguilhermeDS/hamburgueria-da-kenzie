@@ -6,10 +6,11 @@ import CartEmpty from "../CartEmpty";
 import CartProducts from "../CartProducts";
 import CartTotal from "../CartTotal";
 import { StyledContainerModalCart, StyledModalCart } from "./style";
-import { MdOutlineClose } from "react-icons/md"
+import { MdOutlineClose } from "react-icons/md";
 
 const Cart = () => {
-  const { currentSale, animationModal, handleNoneModal } = useContext(CartContext);
+  const { currentSale, animationModal, handleNoneModal } =
+    useContext(CartContext);
 
   return (
     <StyledContainerModalCart>
@@ -18,7 +19,9 @@ const Cart = () => {
           <StyledText tag="h3" fontWeight={700} fontSize="3" colorText="white">
             Carrinho de compras
           </StyledText>
-          <button onClick={handleNoneModal}><MdOutlineClose/></button>
+          <button onClick={handleNoneModal}>
+            <MdOutlineClose />
+          </button>
         </section>
         <section className="containerListCart">
           <ul>

@@ -22,5 +22,4 @@ export const SearchProvider = ({ children }: iSearchProviderProps) => {
   );
 };
 
-
 export const useSearch = () => useContext(SearchContext);
